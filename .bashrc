@@ -114,7 +114,12 @@ if ! shopt -oq posix; then
 fi
 
 # Defined by CY
+## color
 export TERM=xterm-256color
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+## status line (powerline)
+if [ -f /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 fi
